@@ -21,8 +21,10 @@ class GamesController < ApplicationController
   end
 
   def english_word?(word)
-    response = open("https://wagon-dictionary.herokuapp.com/autocomplete/#{word}")
+    response = open("https://wagon-dictionary.herokuapp.com/#{word}")
     json = JSON.parse(response.read)
     json['found']
   end
 end
+
+
